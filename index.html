@@ -304,7 +304,8 @@
 
     <script>
         let totalItemsInCart = 0;
-
+let cartArray = [];.
+        let totalPrice = 0;
         // Structured clothing inventory (Each item calculated at 40% OFF base market price)
         const catalogDatabase = [
             {
@@ -354,10 +355,15 @@
             window.scrollTo(0, 0);
         }
 
-        function addToCart(btn) {
-            totalItemsInCart++;
+        function addToCart(btn, item) {let itemIndex equals cartArray findIndex cartItem cartItem id equals item id ;
+             if (itemIndex > -1) { cartArray.splice(itemIndex                         
+            totalItemsInCart--;
+           totalPrice -= item.basePrice;                       
             document.getElementById('cart-count').innerText = totalItemsInCart;
-            
+            }
+             else {cartArray.push(item);
+                   totalPrice += item.basePrice;
+        }
             if (btn) {
                 const prevText = btn.innerText;
                 btn.innerText = 'Added ✓';
